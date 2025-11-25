@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VS Aerotech - Complete Website</title>
+  
+  <link href="https://fonts.cdnfonts.com/css/general-sans" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,600,700,800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <script>
+      tailwind.config = {
+          theme: {
+              extend: {
+                  fontFamily: {
+                      sans: ['Inter', 'sans-serif'],
+                  },
+                  colors: {
+                      'primary-blue': '#2563EB',
+                      'dark-text': '#1F2937',
+                      'subtle-text': '#4B5563',
+                  }
+              }
+          }
+      }
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">
+      <img src="./images/logo.svg" alt="VS Aerotech Logo" />
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li class="dropdown">
+          <button class="dropbtn" id="servicesBtn">Services ▾</button>
+          <ul class="dropdown-content" id="servicesDropdown">
+            <li><a href="#services">Core Services</a></li>
+            <li><a href="#services">Aircraft Manufacturing</a></li>
+            <li><a href="#services">Maintenance Services</a></li>
+            <li><a href="#services">Aviation Technology</a></li>
+          </ul>
+        </li>
+        <li><a href="#innovation">Innovation</a></li>
+        <li><a href="#stories">Success Stories</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="contact-btn">Contact Us</a>
+    <div class="menu-icon" id="menu-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Soaring Above <br> Expectations in Aviation</h1>
+      <p>
+        Innovative solutions for aircraft manufacturing, maintenance, and aviation technology.
+        We build the future of flight.
+      </p>
+      <div class="hero-buttons">
+        <a href="#services" class="btn-primary">Explore Our Services</a>
+        <a href="#contact" class="btn-secondary">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="core-services" id="services">
+    <div class="container">
+      <div class="header">
+        <div class="header-left">
+          <h2>Our Core Services</h2>
+          <p>Unmatched Expertise in Aircraft Innovation, Maintenance, and Advanced Technology Solutions.</p>
+        </div>
+        <a href="#innovation" class="learn-btn">Learn more →</a>
+      </div>
+      <div class="services">
+        <div class="service-card">
+          <img src="./images/section2-1.jpeg" alt="Aircraft Manufacturing" />
+          <div class="arrow-icon">➜</div>
+          <div class="service-content">
+            <h3>Aircraft Manufacturing</h3>
+            <p>Crafting state-of-the-art airplanes designed for safety, efficiency, and innovation.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <img src="./images/section2-2.jpeg" alt="Maintenance & Repair Services" />
+          <div class="arrow-icon">➜</div>
+          <div class="service-content">
+            <h3>Maintenance & Repair Services</h3>
+            <p>Comprehensive services, repairs, and regular servicing to keep your aircrafts in top-notch condition.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <img src="./images/section2-3.jpeg" alt="Aviation Technology Solutions" />
+          <div class="arrow-icon">➜</div>
+          <div class="service-content">
+            <h3>Aviation Technology Solutions</h3>
+            <p>Empowering the future of aviation with AI systems, fuel-efficient technologies, and advanced avionics.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-tailwind-section" id="about">
+    <div class="relative min-h-screen flex items-center overflow-hidden">
+        <div class="absolute inset-0 w-full h-full -z-10">
+            <div class="absolute inset-0 w-full h-full bg-cover bg-center"
+                 style="background-image: url('./images/section3-bg.jpeg');">
+            </div>
+            <div class="absolute inset-0 w-full h-full bg-black/50"></div>
+        </div>
+        <div class="relative z-10 w-full container mx-auto px-6 py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="flex flex-col">
+                    <p class="text-lg font-bold text-blue-400 uppercase tracking-wider animate-fade-in-up-1">
+                        About
+                    </p>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold my-4 text-white animate-fade-in-up-2">
+                        Skybound Aerotech
+                    </h1>
+                    <p class="text-xl text-gray-300 mb-8 max-w-lg animate-fade-in-up-3">
+                        With over 20 years of experience, we specialize in crafting world-class aviation solutions, ensuring safety, reliability, and innovation at every step.
+                    </p>
+                    <a href="#innovation" 
+                       class="inline-flex items-center gap-2 px-6 py-3 bg-white/5 border border-white/20 rounded-lg text-white font-semibold w-fit
+                              hover:bg-white/10 transition-colors duration-300 group animate-fade-in-up-4">
+                        Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" 
+                             class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                        </svg>                          
+                    </a>
+                </div>
+                <div class="flex flex-col gap-6">
+                    <div class="bg-gray-900/60 backdrop-blur-md p-6 rounded-2xl shadow-2xl border border-white/10 
+                                transition-all duration-300 ease-in-out hover:scale-[1.03] hover:border-white/20
+                                animate-fade-in-up-5">
+                        <div class="flex flex-col sm:flex-row items-start gap-5">
+                            <p class="text-5xl font-extrabold text-blue-600">100+</p>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold mb-2 text-white">Aircraft Manufactured</h3>
+                                <p class="text-base text-gray-300">
+                                    Designed and delivered over 100 advanced aircraft models, ensuring superior performance, safety, and reliability for global aviation partners.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="bg-gray-900/60 backdrop-blur-md p-6 rounded-2xl shadow-2xl border border-white/10
+                                    transition-all duration-300 ease-in-out hover:scale-[1.03] hover:border-white/20
+                                    animate-fade-in-up-6">
+                            <p class="text-5xl font-extrabold text-blue-600 mb-3">500+</p>
+                            <h3 class="text-xl font-semibold mb-2 text-white">Maintenance Contracts</h3>
+                            <p class="text-base text-gray-300">
+                                Successfully completed over 500 comprehensive maintenance contracts, enhancing fleet efficiency and minimizing downtime for leading airlines worldwide.
+                            </p>
+                        </div>
+                        <div class="bg-gray-900/60 backdrop-blur-md p-6 rounded-2xl shadow-2xl border border-white/10
+                                    transition-all duration-300 ease-in-out hover:scale-[1.03] hover:border-white/20
+                                    animate-fade-in-up-7">
+                            <p class="text-5xl font-extrabold text-blue-600 mb-3">15+</p>
+                            <h3 class="text-xl font-semibold mb-2 text-white">Global Presence</h3>
+                            <p class="text-base text-gray-300">
+                                Operating in 15+ countries, delivering aviation solutions tailored to diverse markets and fostering global partnerships across the aerospace industry.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="innovation-tailwind-section bg-gray-50 font-sans p-4 sm:p-8" id="innovation">
+    <div class="max-w-7xl mx-auto bg-white p-6 md:p-12 lg:p-20 rounded-xl">
+        <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
+            <div class="w-full lg:w-1/2 flex gap-4 tilt-effect h-[560px] max-h-[560px]">
+                <div class="flex-shrink-0 w-2/4">
+                    <img 
+                        src="./images/section4-1.jpeg" 
+                        alt="Engineer analyzing an aircraft in a hangar" 
+                        class="w-full h-full object-cover rounded-3xl transition-transform duration-300 hover:scale-[1.01]"
+                    >
+                </div>
+                <div class="flex flex-col gap-4 w-2/4 h-full">
+                    <img 
+                        src="./images/section4-3.jpeg" 
+                        alt="Pilot smiling in the cockpit" 
+                        class="w-full flex-1 object-cover rounded-3xl transition-transform duration-300 hover:scale-[1.01]"
+                    >
+                    <img 
+                        src="./images/section4-2.jpeg" 
+                        alt="Crew member with safety vest" 
+                        class="w-full flex-1 object-cover rounded-3xl transition-transform duration-300 hover:scale-[1.01]"
+                    >
+                </div>
+            </div>
+            <div class="w-full lg:w-1/2 space-y-6">
+                <h1 class="text-5xl font-extrabold text-dark-text tracking-tight leading-snug">
+                    Innovating the Future of Aviation
+                </h1>
+                <p class="text-lg text-subtle-text">
+                    Revolutionizing aviation with cutting-edge technology and innovative solutions that drive safety, sustainability, and efficiency in the skies.
+                </p>
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <span class="inline-flex items-center justify-center w-6 h-6 mr-3 text-primary-blue flex-shrink-0 custom-bullet">
+                            <img src="./images/bullet point icon.svg" class="w-full h-full object-contain" alt="Bullet Icon" />
+                        </span>
+                        <div>
+                            <p class="font-semibold text-dark-text text-base">AI Diagnostics for Maintenance:</p>
+                            <p class="text-subtle-text text-sm">Reduce downtime with predirective maintenance.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="inline-flex items-center justify-center w-6 h-6 mr-3 text-primary-blue flex-shrink-0 custom-bullet">
+                            <img src="./images/bullet point icon.svg" class="w-full h-full object-contain" alt="Bullet Icon" />
+                        </span>
+                        <div>
+                            <p class="font-semibold text-dark-text text-base">Fuel-Efficient Aircraft Design:</p>
+                            <p class="text-subtle-text text-sm">Sustainable solution for modern challenges.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="inline-flex items-center justify-center w-6 h-6 mr-3 text-primary-blue flex-shrink-0 custom-bullet">
+                            <img src="./images/bullet point icon.svg" class="w-full h-full object-contain" alt="Bullet Icon" />
+                        </span>
+                        <div>
+                            <p class="font-semibold text-dark-text text-base">Smart Avionics system:</p>
+                            <p class="text-subtle-text text-sm">Intuitive controls and data-driven flight analytics.</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#services" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-xl text-white bg-primary-blue hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-[1.02]">
+                    Discover Our Innovations
+                    <svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="explore-tailwind-section">
+    <div class="explore-hero-section flex items-center p-8 md:p-16 lg:p-24 rounded-none">
+        <div class="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
+        <div class="relative max-w-xl text-white">
+            <h1 class="text-[2.8rem] sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-5 tracking-tightest text-shadow-strong" style="font-weight: 800;">
+                Explore Skybound Aerotech: Innovation in Every Flight
+            </h1>
+            <p class="text-lg mb-8 max-w-lg font-light text-shadow-strong" style="font-weight: 400;">
+                Discover how our cutting-edge aircraft, reliable services, and innovative solutions are shaping the future of aviation. Explore more below.
+            </p>
+            <a href="#about" class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50">
+                Learn More <span class="ml-2 font-light">→</span>
+            </a>
+            <p class="text-xs mt-6 opacity-80 max-w-sm" style="font-weight: 400;">
+                *Click here to explore our journey, groundbreaking services, and how we can elevate your aviation needs.
+            </p>
+        </div>
+    </div>
+  </section>
+
+  <section class="success-stories-section" id="stories">
+      <header class="section-header">
+          <div class="header-content">
+              <h2 class="title">Our Success Stories</h2>
+              <p class="subtitle">Explore real stories from aviation leaders and professionals who trust Skybound Aerotech for excellence in aircraft solutions and services.</p>
+          </div>
+          <button class="view-all-button">
+              View All Success Stories
+              <span class="arrow-icon">&rarr;</span>
+          </button>
+      </header>
+      <div class="stories-grid">
+          <div class="story-card">
+              <div class="profile">
+                  <div class="avatar"><img src="./images/section6-image1.jpg" alt="John Matthews"></div>
+                  <div class="info">
+                      <h3 class="name">John Matthews</h3>
+                      <p class="title">Airline CEO</p>
+                  </div>
+              </div>
+              <p class="quote">Skybound Aerotech has been a game-changer for our fleet. Their aircraft reliability and maintenance services are truly unparalleled.</p>
+          </div>
+          <div class="story-card">
+              <div class="profile">
+                  <div class="avatar"><img src="./images/section6-image2.jpg" alt="Sarah Green"></div>
+                  <div class="info">
+                      <h3 class="name">Sarah Green</h3>
+                      <p class="title">Aviation Engineer</p>
+                  </div>
+              </div>
+              <p class="quote">Collaborating with Skybound Aerotech has been an incredible journey. Their engineering solutions are ahead of the curve, always pushing the boundaries of what's possible. Whether it's their AI-powered systems or sustainable aviation technology, Skybound delivers innovation that transforms the way we design and operate aircraft. Their commitment to excellence inspires confidence at every level.</p>
+          </div>
+          <div class="story-card fade-text">
+              <div class="profile">
+                  <div class="avatar"><img src="./images/section6-image3.jpg" alt="Carlos Vega"></div>
+                  <div class="info">
+                      <h3 class="name">Carlos Vega</h3>
+                      <p class="title">Pilot</p>
+                  </div>
+              </div>
+              <p class="quote">Flying Skybound Aerotech planes has been an amazing experience. They combine safety, comfort, and advanced technology like no other.</p>
+          </div>
+          <div class="story-card">
+              <div class="profile">
+                  <div class="avatar"><img src="./images/section6-image4.jpg" alt="Amara Singh"></div>
+                  <div class="info">
+                      <h3 class="name">Amara Singh</h3>
+                      <p class="title">Operations Manager</p>
+                  </div>
+              </div>
+              <p class="quote">Skybound Aerotech has been instrumental in streamlining our aviation operations. Their quick response times and comprehensive maintenance solutions have significantly reduced downtime, allowing us to maintain a robust schedule. The team's professionalism and expertise shine through in every interaction, making them a reliable partner that we can depend on for our growing operations.</p>
+          </div>
+          <div class="story-card">
+              <div class="profile">
+                  <div class="avatar"><img src="./images/section6-image5.jpg" alt="James Oliver"></div>
+                  <div class="info">
+                      <h3 class="name">James Oliver</h3>
+                      <p class="title">Aerospace Consultant</p>
+                  </div>
+              </div>
+              <p class="quote">The innovation in Skybound's aircraft design sets them apart. They truly understand what the future of aviation looks like.</p>
+          </div>
+          <div class="story-card fade-text">
+              <div class="profile">
+                  <div class="avatar"><img src="./images/section6-image6.jpg" alt="Maria Gonzalez"></div>
+                  <div class="info">
+                      <h3 class="name">Maria Gonzalez</h3>
+                      <p class="title">Flight Instructor</p>
+                  </div>
+              </div>
+              <p class="quote">Skybound Aerotech's planes are a joy to train with. Their attention to detail and safety standards is top-notch.</p>
+          </div>
+          <div class="story-card">
+              <div class="profile">
+                  <div class="avatar"><img src="./images/section6-image7.jpg" alt="Michael Yuan"></div>
+                  <div class="info">
+                      <h3 class="name">Michael Yuan</h3>
+                      <p class="title">Logistics Director</p>
+                  </div>
+              </div>
+              <p class="quote">Their global presence and seamless support make Skybound a preferred partner. They've exceeded expectations at every stage of collaboration.</p>
+          </div>
+          <div class="story-card">
+              <div class="profile">
+                  <div class="avatar"><img src="./images/section6-image8.jpg" alt="Emma Woods"></div>
+                  <div class="info">
+                      <h3 class="name">Emma Woods</h3>
+                      <p class="title">Airline Executive</p>
+                  </div>
+              </div>
+              <p class="quote">Training future pilots on Skybound Aerotech aircraft has been a pleasure. The planes are designed with precision, offering intuitive controls and unmatched safety features. Skybound's focus on pilot-centric design enhances the learning experience for my students, while their cutting-edge technology ensures a smooth and safe training process. They've set a new standard in aviation.</p>
+          </div>
+          <div class="story-card fade-text">
+              <div class="profile">
+                  <div class="avatar"><img src="./images/section6-image9.jpg" alt="Daniel Koch"></div>
+                  <div class="info">
+                      <h3 class="name">Daniel Koch</h3>
+                      <p class="title">Airport Manager</p>
+                  </div>
+              </div>
+              <p class="quote">Skybound Aerotech's innovations have positively impacted airport operations. Their seamless integration of technology ensures faster turnaround times, minimal disruptions, and superior passenger experiences.</p>
+          </div>
+      </div>
+  </section>
+
+  <div id="testimonial-modal" class="modal-overlay">
+      <div class="modal-content">
+          <span class="modal-close">&times;</span>
+          <div id="modal-body">
+              </div>
+      </div>
+  </div>
+  <div id="image-modal" class="image-modal-overlay">
+      <div id="image-modal-content" class="image-modal-content">
+          </div>
+  </div>
+  <section class="contact-form-section" id="contact">
+      <div class="main-content-wrapper">
+          <div class="contact-container">
+              <div class="text-section">
+                  <h1>Connect with<br>Skybound Aerotech</h1>
+                  <p>Reach out to us for any inquiries, support, or partnership opportunities. We’re here to assist you every step of the way.</p>
+              </div>
+  
+              <div class="form-card">
+                  <div class="input-field">
+                      <input type="text" placeholder="Your name" />
+                  </div>
+  
+                  <div class="input-group">
+                      <div class="input-field">
+                          <input type="tel" placeholder="Phone number" />
+                      </div>
+                      <div class="input-field">
+                          <input type="email" placeholder="Email address" />
+                      </div>
+                  </div>
+  
+                  <div class="input-field">
+                      <textarea placeholder="Your Message"></textarea>
+                  </div>
+  
+                  <div class="submit-button-container">
+                      <button type="submit" class="submit-button">Submit</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-main">
+        <div class="footer-section footer-contact">
+            <h3>
+                <span class="logo-svg"></span> 
+            </h3>
+            <p>Address: 123 Aviation Hub, Tech City</p>
+            <p>Phone: (+1) 123-456-7890</p>
+            <p>Email: info@skyboundaerotech.com</p>
+            
+            <div class="subscribe-form">
+                <input type="email" placeholder="Email Address" />
+                <button type="submit">Subscribe</button>
+            </div>
+        </div>
+
+        <div class="footer-section footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#innovation">Innovation</a></li>
+                <li><a href="#stories">Success Stories</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section footer-services">
+            <h4>Services</h4>
+            <ul>
+                <li><a href="#services">aircraft manufacturing</a></li>
+                <li><a href="#services">maintenance services</a></li>
+                <li><a href="#services">aviation technology solutions</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2024 Skybound Aerotech. All Rights Reserved.</p>
+        <div class="social-icons">
+            <span>Follow Us</span>
+            <a href="#">in</a> 
+            <a href="#">X</a> 
+            <a href="#">f</a> 
+            <a href="#">G</a> 
+        </div>
+    </div>
+  </footer> 
+
+  <script src="script.js"></script>
+</body>
+</html>

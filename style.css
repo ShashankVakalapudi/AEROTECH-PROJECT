@@ -1,0 +1,1195 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Font preference updated to General Sans as per Section 2 */
+  font-family: 'General Sans', "Poppins", sans-serif;
+}
+
+html {
+  /* Added for smooth navbar linking */
+  scroll-behavior: smooth;
+}
+
+body {
+  /* Changed background to light gray as requested */
+  background: #f8f9fa; /* A suitable light gray/off-white background */
+  color: #333;
+  overflow-x: hidden; 
+}
+
+/* ===== 1. NAVBAR ===== */
+.navbar {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 80px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 100px;
+  height: 80px;
+}
+
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a, .dropbtn {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.nav-links a:hover, .dropbtn:hover {
+  color: #007bff;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none; /* Default state: hidden */
+  position: absolute;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  list-style: none;
+  padding: 10px 0;
+  border-radius: 8px;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+}
+
+/* FIX: This class will be added by JavaScript 
+  to show the menu on click.
+*/
+.dropdown-content.show {
+  display: block;
+}
+
+/* ** MODIFICATION HERE: Explicitly ensure it's hidden when not shown ** */
+.dropdown:not(:hover) > .dropdown-content:not(.show) {
+  display: none !important;
+}
+
+
+.dropdown-content li {
+  padding: 10px 20px;
+}
+
+.dropdown-content li a {
+  color: #333;
+  display: block;
+}
+
+.dropdown-content li a:hover {
+  color: #007bff;
+}
+
+/* CONTACT BUTTON */
+.contact-btn {
+  background: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.contact-btn:hover {
+  background: #0056d2;
+}
+
+/* ===== 2. HERO SECTION ===== */
+.hero {
+  position: relative;
+  width: 90%;
+  height: 80vh;
+  margin: 30px auto;
+  background: url("./images/hero.jpeg") no-repeat center center/cover;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 80px;
+  color: #fff;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  text-align: left;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  line-height: 1.3;
+  font-weight: 700;
+  color: #fff;
+}
+
+.hero-content p {
+  margin: 20px 0;
+  font-size: 1.1rem;
+  color: #f0f0f0;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-primary:hover {
+  background: #0056d2;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 10px 25px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+  background: #fff;
+  color: #007bff;
+}
+
+/* ===== MOBILE MENU ===== */
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-icon span {
+  height: 3px;
+  width: 25px;
+  background: #333;
+  border-radius: 5px;
+}
+
+/* ===== HERO RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 15px 40px;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    background: #fff;
+    top: 70px; /* Should match navbar height */
+    right: 0;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
+  }
+
+  .nav-links.active {
+    display: block;
+  }
+
+  .hero {
+    height: 75vh;
+    padding: 40px 20px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+/* ================================ */
+/* ===== 3. CORE SERVICES STYLES ===== */
+/* ================================ */
+
+.core-services {
+  padding: 60px 20px;
+  /* Added to stand out on light gray bg */
+  background-color: #ffffff;
+}
+
+/* Scoped container for this section */
+.core-services .container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* -------- Header Section -------- */
+.core-services .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.core-services .header-left {
+  max-width: 700px;
+}
+
+.core-services .header-left h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.core-services .header-left p {
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.core-services .learn-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  padding: 12px 26px;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: 0.3s ease;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.core-services .learn-btn:hover {
+  background-color: #0056d6;
+  transform: translateY(-2px);
+}
+
+/* -------- Service Cards Section -------- */
+.core-services .services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.core-services .service-card {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  height: 370px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.core-services .service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.core-services .service-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.4s ease;
+}
+
+.core-services .service-card:hover img {
+  transform: scale(1.05);
+}
+
+.core-services .service-content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent 60%);
+  color: #fff;
+  border-radius: 15px;
+}
+
+.core-services .service-content h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.core-services .service-content p {
+  font-size: 0.95rem;
+  color: #ddd;
+  line-height: 1.4;
+}
+
+.core-services .arrow-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: rgba(255,255,255,0.85);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  color: #000;
+  transition: 0.3s ease;
+}
+
+.core-services .arrow-icon:hover {
+  background-color: #fff;
+}
+
+@media (max-width: 768px) {
+  .core-services .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .core-services .header-left h2 {
+    font-size: 2rem;
+  }
+
+  .core-services .header-left p {
+    font-size: 1rem;
+  }
+
+  .core-services .learn-btn {
+    align-self: flex-start;
+  }
+}
+
+/* ================================ */
+/* ===== 4. ABOUT SECTION STYLES ===== */
+/* ================================ */
+
+/* This section is primarily styled with Tailwind.
+  The custom animations below are used by it. 
+*/
+
+/* Wrapper class to avoid conflict with Tailwind's 'container' */
+.about-tailwind-section .container {
+    max-width: 1280px;
+}
+
+/* Define the fade-in-up animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up-1 {
+    animation: fadeInUp 0.6s ease-out 0.2s;
+    animation-fill-mode: both;
+}
+.animate-fade-in-up-2 {
+    animation: fadeInUp 0.6s ease-out 0.4s;
+    animation-fill-mode: both;
+}
+.animate-fade-in-up-3 {
+    animation: fadeInUp 0.6s ease-out 0.6s;
+    animation-fill-mode: both;
+}
+.animate-fade-in-up-4 {
+    animation: fadeInUp 0.6s ease-out 0.8s;
+    animation-fill-mode: both;
+}
+.animate-fade-in-up-5 {
+    animation: fadeInUp 0.6s ease-out 1.0s;
+    animation-fill-mode: both;
+}
+.animate-fade-in-up-6 {
+    animation: fadeInUp 0.6s ease-out 1.2s;
+    animation-fill-mode: both;
+}
+.animate-fade-in-up-7 {
+    animation: fadeInUp 0.6s ease-out 1.4s;
+    animation-fill-mode: both;
+}
+
+/* ================================ */
+/* ===== 5. INNOVATION SECTION STYLES ===== */
+/* ================================ */
+.tilt-effect {
+    transition: transform 0.4s ease-out;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.tilt-effect:hover {
+    transform: perspective(1000px) rotateX(1deg) rotateY(3deg) scale(1.01);
+}
+
+.custom-bullet {
+    background-color: transparent; 
+}
+
+/* ================================ */
+/* ===== 6. EXPLORE SECTION STYLES ===== */
+/* ================================ */
+
+/* Renamed to avoid conflict with Section 1 .hero */
+.explore-hero-section {
+    background-image: url('./images/section5.jpeg');
+    background-size: cover;
+    background-position: center 30%; 
+    background-repeat: no-repeat;
+    height: 100vh; 
+    min-height: 500px;
+    position: relative;
+    font-family: 'Inter', sans-serif; 
+}
+
+/* Subtle text shadow for better contrast */
+.text-shadow-strong {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Custom class for ultra-tight letter spacing */
+.tracking-tightest {
+    letter-spacing: -0.05em; 
+}
+
+
+/* =================================== */
+/* ===== 7. SUCCESS STORIES STYLES ===== */
+/* =================================== */
+
+body.modal-open {
+    overflow: hidden;
+}
+
+/* --- Main Section Wrapper --- */
+.success-stories-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f8f8f8; /* This will blend with the new body bg */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; /* Font for this section */
+    border-radius: 12px; 
+}
+
+/* --- Section Header Styling --- */
+.section-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+.header-content { flex: 1; min-width: 300px; }
+.header-content .title {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #111;
+    margin: 0 0 10px 0;
+}
+.header-content .subtitle {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.5;
+    max-width: 450px;
+    margin: 0;
+}
+.view-all-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s;
+    height: fit-content;
+}
+.view-all-button .arrow-icon { font-size: 1.2em; line-height: 1; }
+
+/* --- STAGGERED GRID (MASONRY) LAYOUT --- */
+.stories-grid {
+    column-count: 3;
+    column-gap: 20px;
+}
+
+/* --- Story Card Styling --- */
+.story-card {
+    background-color: white;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+    flex-direction: column;
+    break-inside: avoid;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.story-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Profile area */
+.story-card .profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.story-card .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    margin-right: 15px;
+    overflow: hidden; /* This clips the img to a circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.story-card .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills the circle */
+}
+
+.story-card .info .name {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #111;
+    margin: 0;
+}
+.story-card .info .title {
+    font-size: 0.9em;
+    color: #007bff;
+    margin: 4px 0 0 0;
+}
+.story-card .quote {
+    font-size: 1em;
+    color: #444;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- Faded Text Effect --- */
+.fade-text .quote {
+    max-height: 6.4em;
+    position: relative;
+    overflow: hidden;
+    pointer-events: none; 
+}
+.fade-text .quote::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3.2em;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+}
+
+/* --- Testimonial Modal (Lightbox) Styling --- */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+}
+.modal-content {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 30px 40px;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: slideInAndFlip 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2.5em;
+    color: #aaa;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+}
+.modal-close:hover { color: #000; }
+
+/* Styles for the content *inside* the testimonial modal */
+#modal-body .profile { display: flex; align-items: center; margin-bottom: 15px; }
+#modal-body .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    margin-right: 15px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+#modal-body .avatar:hover {
+    transform: scale(1.1);
+}
+#modal-body .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#modal-body .modal-quote {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* --- Modal Animations --- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes slideInAndFlip {
+    from { 
+        transform: translateY(-80px) rotateY(-180deg); 
+        opacity: 0; 
+    }
+    to { 
+        transform: translateY(0) rotateY(0deg); 
+        opacity: 1; 
+    }
+}
+
+/* --- Image Maximize Modal Styling --- */
+.image-modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 2000; /* Higher than the first modal */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+    cursor: pointer;
+}
+
+.image-modal-content img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 992px) {
+    .stories-grid { column-count: 2; }
+}
+@media (max-width: 600px) {
+    .section-header { flex-direction: column; align-items: flex-start; }
+    .header-content .title { font-size: 2em; }
+    .stories-grid { column-count: 1; }
+    .modal-content { padding: 30px 25px; }
+}
+
+
+/* =================================== */
+/* ===== 8. CONTACT FORM STYLES ===== */
+/* =================================== */
+
+/* --- Font Definitions & Variables --- */
+:root {
+    --primary-text: #ffffff;
+    --secondary-text: #b3b3b3;
+    --overlay: rgba(0, 0, 0, 0.55); 
+    --inner-dark-mask: rgba(0, 0, 0, 0.3); 
+    --card-bg: rgba(15, 15, 15, 0.7); 
+    --input-bg: rgba(25, 25, 25, 0.85); 
+    --border-color: rgba(255, 255, 255, 0.1);
+    --focus-color: #007bff;
+    --button-bg: #007bff;
+    --button-hover: #0056b3;
+    --footer-bg: #000000;
+    --border-radius-sm: 8px;
+    --border-radius-lg: 14px;
+}
+
+/* --- Section Wrapper (replaces 'body' styles) --- */
+.contact-form-section {
+    font-family: 'Inter', sans-serif;
+    color: var(--primary-text);
+    position: relative;
+    background-image: url("./images/section7_bg_image.jpeg");
+    background-size: cover;
+    background-position: center;
+    /* Fixed background as requested */
+    background-attachment: fixed;
+}
+
+/* Dark overlay for this section */
+.contact-form-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--overlay);
+    z-index: 0;
+}
+
+.main-content-wrapper {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 50px;
+    min-height: calc(100vh - 80px); 
+    overflow: hidden; 
+}
+
+/* Subtle dark layer directly behind the UI area */
+.main-content-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--inner-dark-mask);
+    z-index: -1; 
+}
+
+/* Renamed to avoid conflicts */
+.contact-container {
+    position: relative;
+    z-index: 2; 
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 50px;
+    padding-top: 50px;
+}
+
+.contact-form-section .text-section {
+    flex: 1;
+    max-width: 550px;
+    text-align: left;
+}
+
+.contact-form-section .text-section h1 {
+    font-family: 'General Sans', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.contact-form-section .text-section p {
+    font-size: 1.1rem;
+    color: var(--secondary-text);
+    max-width: 420px;
+    line-height: 1.6;
+}
+
+/* Form Card */
+.form-card {
+    flex: 1;
+    max-width: 450px;
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: var(--border-radius-lg);
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease; 
+}
+
+.form-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 15px var(--focus-color); 
+}
+
+.form-card:focus-within {
+    transform: scale(1.02); 
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 20px var(--focus-color); 
+    z-index: 3; 
+}
+
+.form-card > .input-field {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.input-group {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.input-field {
+    flex: 1;
+}
+
+.input-field input,
+.input-field textarea {
+    width: 100%;
+    padding: 15px 18px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    background: var(--input-bg);
+    color: var(--primary-text);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+.input-field input:focus,
+.input-field textarea:focus {
+    border-color: var(--focus-color);
+}
+
+.input-field textarea {
+    resize: none;
+    height: 120px;
+}
+
+/* Re-declared from root for specificity */
+.contact-form-section ::placeholder {
+    color: var(--secondary-text);
+    opacity: 0.8;
+}
+
+.submit-button-container {
+    display: flex;
+    justify-content: flex-end; 
+    padding-top: 10px;
+}
+
+.submit-button {
+    background-color: var(--button-bg);
+    color: #fff;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    padding: 12px 35px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+}
+
+.submit-button:hover {
+    background-color: var(--button-hover);
+}
+
+
+/* =================================== */
+/* ===== 9. FOOTER STYLES ===== */
+/* =================================== */
+
+.footer {
+    background-color: var(--footer-bg);
+    color: var(--secondary-text);
+    padding: 40px 0 20px 0;
+    width: 100%;
+    position: relative; 
+    z-index: 2;
+}
+
+.footer-main {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-section {
+    margin-right: 40px;
+}
+
+/* Footer Contact Section (Left) */
+.footer-contact {
+    flex-basis: 50%;
+    margin-right: 40px;
+}
+
+.footer-contact h3 {
+    color: transparent; 
+    font-size: 0; 
+    margin: 0 0 20px 0;
+    height: auto; 
+    display: block; 
+}
+
+/* LOGO IMPLEMENTATION (SVG) */
+.footer-contact .logo-svg {
+    background-image: url("./images/logo.svg");
+    background-repeat: no-repeat;
+    background-size: contain; 
+    background-position: left center;
+    width: 150px; 
+    height: 40px; 
+    margin: 0; 
+    display: block; 
+}
+
+.footer-contact p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+.subscribe-form {
+    display: flex;
+    margin-top: 20px;
+    width: 300px;
+}
+
+.subscribe-form input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm) 0 0 var(--border-radius-sm);
+    background: var(--footer-bg);
+    color: var(--primary-text);
+    outline: none;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+}
+
+.subscribe-form button {
+    background-color: var(--button-bg);
+    color: var(--primary-text);
+    border: none;
+    border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
+    padding: 10px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Alignment of Quick Links and Services */
+.footer-links {
+    flex-basis: 25%; 
+}
+.footer-services {
+    flex-basis: 25%; 
+}
+
+.footer-links h4,
+.footer-services h4 {
+    color: var(--primary-text);
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 15px 0;
+}
+
+.footer-links ul,
+.footer-services ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li,
+.footer-services li {
+    margin-bottom: 8px;
+}
+
+.footer-links a,
+.footer-services a {
+    color: var(--secondary-text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover,
+.footer-services a:hover {
+    color: var(--primary-text);
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 20px auto 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.social-icons a {
+    color: var(--primary-text);
+    margin-left: 15px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--focus-color);
+}
+
+/* --- Responsive Styles (Contact & Footer) --- */
+@media (max-width: 1024px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        text-align: center;
+    }
+    .contact-form-section .text-section {
+        text-align: center;
+    }
+    .contact-form-section .text-section h1 {
+        font-size: 2.5rem;
+    }
+    .form-card {
+        width: 90%; 
+        max-width: 500px;
+    }
+    .footer-main {
+        flex-wrap: wrap;
+        padding: 0 20px 40px 20px;
+    }
+    .footer-contact, .footer-links, .footer-services {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+        margin-right: 0;
+    }
+    .footer-contact {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-form-section .text-section h1 {
+        font-size: 2rem;
+    }
+    .main-content-wrapper {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .footer-main {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .subscribe-form {
+        width: 100%;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+    .social-icons {
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .input-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .form-card {
+        padding: 20px;
+    }
+}
